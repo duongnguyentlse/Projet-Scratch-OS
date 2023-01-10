@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-09-09" view-index="0" gantt-divider-location="344" resource-divider-location="300" version="2.8.11" locale="fr">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="184" order="0"/>
+        <field id="tpd4" name="Date de début" width="77" order="1"/>
+        <field id="tpd5" name="Date de fin" width="77" order="2"/>
+        <timeline>
+            <![CDATA[6,0]]>
+        </timeline>
+        <option id="color.recent">
+            <![CDATA[#6666ff #00cccc #eeeeee #66cc00 #cccc00 #cc3300 #ff0033 #cc0066 #cc00cc #0000ff]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="209" order="0"/>
+        <field id="1" name="Rôle par défaut" width="85" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="6" name="Cature de besoins" color="#99ffff" meeting="false" start="2022-02-02" duration="5" complete="100" thirdDate="2021-11-15" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Lire bien le cahier des charges pour avoir des besoins du client dans ce projet. Donner les exigent du client.]]>
+            </notes>
+        </task>
+        <task id="0" name="Organisation Breakdown Structure" color="#ff3333" meeting="false" start="2022-02-09" duration="1" complete="10" thirdDate="2021-11-15" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Représenter les responsabilités de chaque membre pour chque tâche dans ce projet. 
+Responsable Client: NGUYEN Tung Duong
+Responsable Projet (RP): NGUYEN Minh Thang Long
+Responsable Conception/ Intégration (RCI): NGUYEN Tung Duong
+Responsable Développement 1 (RD1): NGUYEN Tung Duong 
+Responsable Développement 2 (RD2): NGUYEN Minh Thang Long]]>
+            </notes>
+        </task>
+        <task id="53" name="Product Breakdown Structure" color="#000000" meeting="false" start="2021-10-11" duration="97" complete="0" thirdDate="2021-11-15" thirdDate-constraint="0" expand="true">
+            <notes>
+                <![CDATA[Déterminer l'ordonnancement des tâches nécessaires à leur réalisation. ]]>
+            </notes>
+            <task id="3" name="Gestion de la mémoire" color="#ff6633" meeting="false" start="2022-02-10" duration="9" complete="0" thirdDate="2021-11-15" thirdDate-constraint="0" expand="true">
+                <notes>
+                    <![CDATA[Développer le stockage du système de fichiers.
+]]>
+                </notes>
+                <task id="5" name="Disque dûr" color="#66ff33" meeting="false" start="2022-02-10" duration="9" complete="0" thirdDate="2021-11-15" thirdDate-constraint="0" expand="true">
+                    <task id="67" name="Appelle disque virtuel" color="#000000" meeting="false" start="2022-02-10" duration="9" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true">
+                        <notes>
+                            <![CDATA[Définir une structure contenant le nom du fichier disque virtuel du système et qui est stocké à partir du premier bloc du fichier disque]]>
+                        </notes>
+                        <task id="68" name="Formater" color="#8cb6ce" meeting="false" start="2022-02-10" duration="5" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true">
+                            <notes>
+                                <![CDATA[Pour formater votre système, l’exécutable demande comme paramètre le nom du répertoire existant dans lequel sera crée le fichier disque, et la taille disk_size du disque. L’opération de formatage du système doit être faite obligatoirement et une seule fois à la création du système. Tout formatage d’un système existant effacera ses données.]]>
+                            </notes>
+                        </task>
+                        <task id="69" name="Catalogue du disque" color="#8cb6ce" meeting="false" start="2022-02-16" duration="5" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true">
+                            <notes>
+                                <![CDATA[Après avoir ajouté un tab de structure  assimilable à la table d’inodes d’un système UNIX, et de taille fixe. Chaque entrée du tableau d’inode correspond à un fichier du disque et donne son nom, son premier bloc, sa taille et d’autre informations. Le tout définit le catalogue du disque.]]>
+                            </notes>
+                        </task>
+                    </task>
+                    <task id="71" name="Fichiers" color="#8cb6ce" meeting="false" start="2022-02-16" duration="3" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true">
+                        <notes>
+                            <![CDATA[Un nom de fichier fait plus de FILENAME_MAX_SIZE caractères et que l'on peur avoir au maximum MAX_FILES fichiers.
+La taille maximale des fichiers est MAX_FILES_SIZE ]]>
+                        </notes>
+                    </task>
+                </task>
+            </task>
+            <task id="74" name="Gestion de E/S" meeting="false" start="2021-10-11" duration="1" complete="0" expand="true"/>
+            <task id="75" name="Programmes utilisateurs" color="#000000" meeting="false" start="2021-10-11" duration="1" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true"/>
+            <task id="72" name="Communication Processus-Operateur" color="#000000" meeting="false" start="2021-10-11" duration="1" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true">
+                <notes>
+                    <![CDATA[Programmer le Couche 5
+]]>
+                </notes>
+                <task id="73" name="Interpretaion des commandes" color="#8cb6ce" meeting="false" start="2021-10-11" duration="1" complete="0" thirdDate="2021-10-11" thirdDate-constraint="0" expand="true">
+                    <notes>
+                        <![CDATA[1. Programmer un interprète de commande ”Unix like” selon la boucle :
+(a) Lecture de la commande (avec ses param`etres)
+(b) Interprétation
+(c) Exécution
+(d) Affichage du résultat
+
+2. Les commandes connues de l’interprètes sont: 
+- ls[-l] 
+- cat <nom de fichier>
+- rm <nom de fichier> 
+- cr <nom de fichier> 
+- edit <nom de fichier>
+- load <nom de fichier>
+- store <nom de fichier>
+- chown <nom de fichier><login autre utilisateur>
+- chmod <nom de fichier> <droit> 
+- listusers
+- quit
+- adduser
+- rmuser <login>
+
+3: La fonction main lancera cet interprète. ]]>
+                    </notes>
+                </task>
+            </task>
+            <task id="80" name="Opérateur" meeting="false" start="2021-10-11" duration="1" complete="0" expand="true">
+                <task id="118" name="Procedure de connexion" meeting="false" start="2021-10-11" duration="1" complete="0" expand="true">
+                    <task id="119" name="Root" meeting="false" start="2021-10-11" duration="1" complete="0" expand="true"/>
+                    <task id="120" name="Mdp" meeting="false" start="2021-10-11" duration="1" complete="0" expand="true"/>
+                    <task id="121" name="Guest" meeting="false" start="2021-10-11" duration="1" complete="0" expand="true"/>
+                </task>
+            </task>
+        </task>
+        <task id="63" name="Annexes" color="#6666ff" meeting="false" start="2022-01-07" duration="1" complete="0" thirdDate="2021-11-01" thirdDate-constraint="0" expand="true"/>
+        <task id="64" name="Validation" color="#00cccc" meeting="false" start="2022-01-13" duration="1" complete="0" thirdDate="2021-11-01" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous>
+        <previous-tasks name="construire un structure de donné"/>
+    </previous>
+    <roles roleset-name="Default"/>
+</project>
