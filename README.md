@@ -1,8 +1,10 @@
 # Project L2
 
-This software program processes a .csv file containing either the voters' ballot, showcasing their preferences for each candidate in order, or a matrix detailing pairwise preferences. It employs various methods to determine the winner, including the Uninominal single-round race (as utilized in the UK and Commonwealth countries) and the Uninominal two-round race (as employed in France). Additionally, it incorporates the Condorcet Minimax and Condorcet Schulze methods, which aim to more accurately represent the voters' preferences, as highlighted by Nicolas de Caritat, marquis de Condorcet, in his work "Essai sur l’application de l’analyse à la probabilité des décisions rendues à la pluralité des voix".
+Nous allons concevoir un système d'exploitation doté de fonctionnalités telles que la gestion des fichiers, des utilisateurs, un processus de connexion et un interpréteur de commandes. Le disque dur de la machine sera simulé par un fichier appelé disque virtuel, qui devra être formaté et contiendra à la fois les fichiers et le répertoire du disque. Le système d'exploitation lui-même sera un programme écrit en langage C, résident en mémoire, gérant des tables permettant de gérer un système de fichiers, qui sera stocké sur un disque dur simulé, représenté par un fichier dans le cadre de ce projet.
 
-This project constitutes a component of my undergraduate studies in Computer Science, undertaken during the first semester of my second year.
+Le système gérera diverses opérations sur les fichiers, une table des utilisateurs, ainsi que des droits simplifiés de ces derniers sur les fichiers. Il inclura également une procédure de connexion et un interpréteur de commandes. Conformément aux pratiques de conception de systèmes, la logique de fonctionnement sera divisée en différentes couches pour assurer une organisation et une gestion efficaces.
+
+
 
 
 
