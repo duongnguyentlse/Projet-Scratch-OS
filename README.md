@@ -1,11 +1,10 @@
 # Project L2
 
-This program reads a .csv file containing either the voters' ballot (the voter's data with their associated order of preference for each candidate) or a matrix of pairwise preferences, then determines the winner using the following methods:
-- Uninominal à un tour (single-round race) [As applied in the UK and Commonwealth countries]
-- Uninominal à deux tours (two-rounds race) [As applied in France]
-- (Condorcet) Minimax
-- (Condorcet) Schulze
+This software program processes a .csv file containing either the voters' ballot, showcasing their preferences for each candidate in order, or a matrix detailing pairwise preferences. It employs various methods to determine the winner, including the Uninominal single-round race (as utilized in the UK and Commonwealth countries) and the Uninominal two-round race (as employed in France). Additionally, it incorporates the Condorcet Minimax and Condorcet Schulze methods, which aim to more accurately represent the voters' preferences, as highlighted by Nicolas de Caritat, marquis de Condorcet, in his work "Essai sur l’application de l’analyse à la probabilité des décisions rendues à la pluralité des voix".
 
-The last two aforementioned Condorcet methods are used to better reflect the voters' voice and preferences as Nicolas de Caritat, marquis de Condorcet, pointed out in his "Essai sur l’application de l’analyse à la probabilité des décisions rendues à la pluralité des voix".
+This project constitutes a component of my undergraduate studies in Computer Science, undertaken during the first semester of my second year.
 
-Finally, this project is part of my undergraduate Computer Science study (first semester of the 2nd year).
+
+
+
+
