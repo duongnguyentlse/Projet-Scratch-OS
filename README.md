@@ -1,17 +1,89 @@
-**Prerequisites**
+# 🖥️ Mini Système d'Exploitation – Simulation avec Disque Virtuel
 
-Before you continue, ensure you meet the following requirements:
+## 📌 Présentation
 
-* I recommend you to ```make clean``` before run the programme.
-* You are using a Linux or Mac OS machine. Windows is not currently supported beacause i did on Mac.
+Ce projet consiste à concevoir un **mini système d'exploitation** en langage **C**, incluant des fonctionnalités telles que :
 
-Dans ce projet, nous allons concevoir un système d'exploitation doté de fonctionnalités telles que la gestion des fichiers, des utilisateurs, un processus de connexion et un interpréteur de commandes. Le disque dur de la machine sera simulé par un fichier appelé disque virtuel, qui devra être formaté et contiendra à la fois les fichiers et le répertoire du disque. Le système d'exploitation lui-même sera un programme écrit en langage C, résident en mémoire, gérant des tables permettant de gérer un système de fichiers, qui sera stocké sur un disque dur simulé, représenté par un fichier dans le cadre de ce projet.
+- Gestion des fichiers (création, suppression, lecture, écriture)
+- Gestion des utilisateurs avec droits d'accès simplifiés
+- Système de connexion sécurisé
+- Interpréteur de commandes (shell)
+- Disque dur simulé à l'aide d’un **fichier de disque virtuel**
 
-Le système gérera diverses opérations sur les fichiers, une table des utilisateurs, ainsi que des droits simplifiés de ces derniers sur les fichiers. Il inclura également une procédure de connexion et un interpréteur de commandes. Conformément aux pratiques de conception de systèmes, la logique de fonctionnement sera divisée en différentes couches pour assurer une organisation et une gestion efficaces.
+Le système fonctionne entièrement en mémoire et stocke les fichiers et métadonnées dans une structure simulée correspondant à un vrai **système de fichiers**.
 
+---
 
+## 🧱 Architecture du Système
 
+Le système est conçu selon une architecture **en couches**, conformément aux bonnes pratiques des systèmes d'exploitation :
 
+1. **Couche physique** : le disque dur est simulé par un **fichier local** (disque virtuel)
+2. **Gestion du système de fichiers** : tables de fichiers, d’inodes et de blocs
+3. **Gestion des utilisateurs** : table des utilisateurs avec permissions de base
+4. **Interface utilisateur** : ligne de commande avec interpréteur simple
+5. **Procédure de login** : vérification des identifiants et ouverture de session
 
+---
 
+## ⚙️ Prérequis
 
+Avant d’exécuter le programme, assurez-vous de respecter les conditions suivantes :
+
+- Utiliser **Linux ou macOS** (Windows n'est pas supporté, le projet ayant été développé sous macOS)
+- Compiler avec `make`
+- Il est recommandé d’exécuter :
+  ```bash
+  make clean
+
+---
+
+### ▶️ Lancer le programme
+```bash
+./os_simulation
+```
+
+---
+
+## ⚙️ Fonctionnalités Clés
+
+### 📁 Gestion de fichiers
+- Création et suppression de fichiers
+- Lecture et écriture dans les fichiers
+- Affichage du contenu des fichiers
+
+### 👤 Gestion des utilisateurs
+- Création et suppression d'utilisateurs
+- Connexion sécurisée via login et mot de passe
+- Droits d'accès personnalisés (lecture / écriture)
+
+### 💾 Disque virtuel
+- Utilisation d’un fichier `.vdisk` pour simuler un disque dur
+- Gestion d’un système de fichiers simple :
+  - Bloc d’allocation
+  - Table des fichiers
+  - Métadonnées
+
+### 💻 Interpréteur de commandes (Mini-shell)
+- Interface ligne de commande pour interagir avec le système
+- Commandes disponibles :
+  - `login` – Se connecter à un compte utilisateur
+  - `create` – Créer un fichier
+  - `read` – Lire un fichier
+  - `write` – Écrire dans un fichier
+  - `ls` – Lister les fichiers disponibles
+  - `exit` – Quitter le système
+
+---
+
+## 🛠️ Dépendances
+- Standard C Library
+- Outils GNU `make`, `gcc`
+
+---
+
+## 🧑‍💻 Auteurs
+Projet réalisé dans le cadre d’un projet universitaire.  
+Contact : [tung-duong.nguyen@univ-tlse3.fr]
+
+---
