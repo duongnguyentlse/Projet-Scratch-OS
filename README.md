@@ -93,7 +93,7 @@ Interface en ligne de commande interactive :
 ## 👥 Auteurs
 Projet réalisé dans le cadre du module "Projet avancé" de la Licence Informatique – Université de Toulouse.  
 Encadrant : Vincent Dugat  
-Étudiants : NGUYEN Tung Duong
+Étudiant : NGUYEN Tung Duong
 
 ---
 
