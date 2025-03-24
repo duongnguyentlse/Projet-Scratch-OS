@@ -1,89 +1,108 @@
-# 🖥️ Mini Système d'Exploitation – Simulation avec Disque Virtuel
+---
 
-## 📌 Présentation
+# 🖥️ ScratchOS – Système d'Exploitation Virtuel Simplifié
 
-Ce projet consiste à concevoir un **mini système d'exploitation** en langage **C**, incluant des fonctionnalités telles que :
-
-- Gestion des fichiers (création, suppression, lecture, écriture)
-- Gestion des utilisateurs avec droits d'accès simplifiés
-- Système de connexion sécurisé
-- Interpréteur de commandes (shell)
-- Disque dur simulé à l'aide d’un **fichier de disque virtuel**
-
-Le système fonctionne entièrement en mémoire et stocke les fichiers et métadonnées dans une structure simulée correspondant à un vrai **système de fichiers**.
+**ScratchOS** est un mini système d'exploitation de type UNIX-like développé en C. Il simule la gestion d'un disque dur, de fichiers, d'utilisateurs, de droits d'accès et fournit une interface ligne de commande complète.
 
 ---
 
-## 🧱 Architecture du Système
+## 🚀 Compilation et Exécution
 
-Le système est conçu selon une architecture **en couches**, conformément aux bonnes pratiques des systèmes d'exploitation :
-
-1. **Couche physique** : le disque dur est simulé par un **fichier local** (disque virtuel)
-2. **Gestion du système de fichiers** : tables de fichiers, d’inodes et de blocs
-3. **Gestion des utilisateurs** : table des utilisateurs avec permissions de base
-4. **Interface utilisateur** : ligne de commande avec interpréteur simple
-5. **Procédure de login** : vérification des identifiants et ouverture de session
-
----
-
-## ⚙️ Prérequis
-
-Avant d’exécuter le programme, assurez-vous de respecter les conditions suivantes :
-
-- Utiliser **Linux ou macOS** (Windows n'est pas supporté, le projet ayant été développé sous macOS)
-- Compiler avec `make`
-- Il est recommandé d’exécuter :
-  ```bash
-  make clean
-
----
-
-### ▶️ Lancer le programme
+### 🔧 Compilation
 ```bash
-./os_simulation
+make
 ```
+
+### ▶️ Lancement du programme principal
+```bash
+./os_simulation <répertoire_du_disque>
+```
+
+### 💾 Formatage du disque virtuel
+Avant toute utilisation :
+```bash
+./cmd_format <répertoire> <taille_en_octets>
+# Exemple :
+./cmd_format ./disk_dir 500000
+```
+
+### 🛠️ Installation du système
+Un programme d’installation permet de :
+- Formater le disque
+- Créer l’utilisateur `root`
+- Initialiser le fichier `passwd`
 
 ---
 
 ## ⚙️ Fonctionnalités Clés
 
-### 📁 Gestion de fichiers
-- Création et suppression de fichiers
-- Lecture et écriture dans les fichiers
-- Affichage du contenu des fichiers
+### 📦 Disque virtuel
+- Fichier `.vdisk` simulant un disque dur réel (nommé `d0`)
+- Formatage obligatoire via `cmd_format`
+- Système de fichiers simple :
+  - Blocs
+  - Super bloc
+  - Table d'inodes (catalogue)
 
 ### 👤 Gestion des utilisateurs
-- Création et suppression d'utilisateurs
-- Connexion sécurisée via login et mot de passe
-- Droits d'accès personnalisés (lecture / écriture)
+- Table d’utilisateurs avec identifiant (UID)
+- Utilisateur root (UID 0) par défaut
+- Ajout/suppression d’utilisateurs (`adduser`, `rmuser`)
+- Authentification sécurisée par login / mot de passe (haché)
+- Droits d’accès simplifiés (lecture/écriture codés de 0 à 3)
 
-### 💾 Disque virtuel
-- Utilisation d’un fichier `.vdisk` pour simuler un disque dur
-- Gestion d’un système de fichiers simple :
-  - Bloc d’allocation
-  - Table des fichiers
-  - Métadonnées
+### 📁 Gestion des fichiers
+- Fichiers texte uniquement
+- Création, suppression, édition, lecture, listage
+- Import/export vers le système hôte :
+  - `load` / `store`
+- Droits par utilisateur (propriétaire vs autres)
+- Suivi des dates de création / modification
 
 ### 💻 Interpréteur de commandes (Mini-shell)
-- Interface ligne de commande pour interagir avec le système
+Interface en ligne de commande interactive :
+- Authentification avec 3 essais maximum
 - Commandes disponibles :
-  - `login` – Se connecter à un compte utilisateur
-  - `create` – Créer un fichier
-  - `read` – Lire un fichier
-  - `write` – Écrire dans un fichier
-  - `ls` – Lister les fichiers disponibles
-  - `exit` – Quitter le système
+  - `ls [-l]` – Liste les fichiers
+  - `cat <fichier>` – Affiche le contenu
+  - `cr <fichier>` – Crée un fichier
+  - `edit <fichier>` – Modifie un fichier
+  - `rm <fichier>` – Supprime un fichier
+  - `load` / `store` – Transfert depuis/vers l’hôte
+  - `chown <fichier> <utilisateur>` – Changement de propriétaire
+  - `chmod <fichier> <droit>` – Modification des droits
+  - `listusers` – Affiche les utilisateurs
+  - `adduser`, `rmuser` – Gestion utilisateurs (root uniquement)
+  - `quit` – Quitte le système et sauvegarde
+
+---
+
+## 📂 Structure du projet
+- `cmd_format.c` – Formatage du disque
+- `install.c` – Installation initiale du système
+- `main.c` – Lancement du mini-shell
+- `user.c`, `file.c`, `inode.c` – Gestion des entités
+- `shell.c` – Interpréteur de commandes
 
 ---
 
 ## 🛠️ Dépendances
-- Standard C Library
-- Outils GNU `make`, `gcc`
+- **Langage** : C (avec GCC)
+- **Outils** : `make`, `fseek`, `fwrite`, `fread`, etc.
 
 ---
 
-## 🧑‍💻 Auteurs
-Projet réalisé dans le cadre d’un projet universitaire.  
-Contact : [tung-duong.nguyen@univ-tlse3.fr]
+## 👥 Auteurs
+Projet réalisé dans le cadre du module "Projet avancé" de la Licence Informatique – Université de Toulouse.  
+Encadrant : Vincent Dugat  
+Étudiants : NGUYEN Tung Duong
 
 ---
+
+## 📌 Remarques
+- Toute reformatage du disque **efface toutes les données existantes**.
+- Le mot de passe root est à définir lors de l’installation.
+- L’utilisation correcte des droits et du système d’authentification est cruciale pour la sécurité des fichiers.
+
+---
+
