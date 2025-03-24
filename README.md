@@ -1,6 +1,4 @@
----
-
-# 🖥️ ScratchOS – Système d'Exploitation Virtuel Simplifié
+## 🖥️ ScratchOS – Système d'Exploitation Virtuel Simplifié
 
 **ScratchOS** est un mini système d'exploitation de type UNIX-like développé en C. Il simule la gestion d'un disque dur, de fichiers, d'utilisateurs, de droits d'accès et fournit une interface ligne de commande complète.
 
